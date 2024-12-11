@@ -1,0 +1,10 @@
+
+services:
+
+  doc:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      container_name: doc_api
+      ports:
+        - "3000:3000"
