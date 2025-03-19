@@ -119,18 +119,18 @@ const execute = async ({ data ,  email}) => {
             newDocId: newDoc.urlDocumento
         })
 
-        return statesChange
+        return newDoc
     } catch (e) {
         console.log(e)
     }
 }
 
-app.post('/execute', (req, res) => {
+app.post('/execute', async (req, res) => {
     const data = req.body;
     if (!data) {
       return res.status(400).json({ error: 'No se recibió ningún dato' });
     }
-    const result = execute(data);
+    const result = await execute(data);
     res.status(200).json(result);
 });
 
