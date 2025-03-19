@@ -134,6 +134,9 @@ app.post('/execute', (req, res) => {
     res.status(200).json(result);
 });
 
+app.get('/', (req, res) => {
+    res.status(200).json({ "server": "okey"});
+});
 
 const port = 3000;
 app.listen(port, () => {
